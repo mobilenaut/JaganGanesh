@@ -19,12 +19,14 @@ var loadDynamically = false;
   E.g. headersBlack[1] doesn't exist
   "Hi, I'm a student." 
 */
-var headersBlack = [ //headersBlack + headersBlue, e.g. "Hi, I'm Dan"
-  "Hi, I'm "
+var headersBlack = [
+  //headersBlack + headersBlue, e.g. "Hi, I'm Dan"
+  "Hi, I'm ",
 ];
 
-var headersBlue = [ //Descriptive and re-affirming words here
-  "Dan.",
+var headersBlue = [
+  //Descriptive and re-affirming words here
+  "Jagan Ganesh.",
 ];
 
 /* If true, the paragraph beneath the header will also
@@ -45,77 +47,81 @@ var connectParagraphToHeaders = false;
   also use tags such as <a>, <span>, and a few more here.
 */
 var rotatingParagraphs = [
-  "Currently studying at Carleton University for computer science with a specialization in software engineering and a minor in applied linguistics. <span>Whew.</span>"
+  "As a Software Engineer with nine years of experience, I specialize in creating impactful Hybrid Mobile Applications using React Native. I collaborate with businesses to create scalable, user-friendly digital solutions that drive engagement and conversions.",
 ];
 
-var addRotatingWords = function() {
-  
+var addRotatingWords = function () {
   var wordsDiv = document.getElementById("rotating-words");
   var paragraphsDiv = document.getElementById("rotating-paragraphs");
   var largestArrayLength;
-  
-  if (!(paragraphsDiv.classList.contains("slider"))) {
+
+  if (!paragraphsDiv.classList.contains("slider")) {
     paragraphsDiv.classList.add("slider");
   }
-  
+
   if (rotateParagraph) {
-    largestArrayLength = Math.max(headersBlack.length, headersBlue.length, rotatingParagraphs.length);
+    largestArrayLength = Math.max(
+      headersBlack.length,
+      headersBlue.length,
+      rotatingParagraphs.length
+    );
   } else {
     largestArrayLength = Math.max(headersBlack.length, headersBlue.length);
   }
-  
+
   for (var index = 0; index < largestArrayLength; index++) {
     //Temp variables
     var headerBeginning;
     var headerEnd;
     var paragraph = rotatingParagraphs[0]; //Default
-    
-    if (index >= headersBlack.length) { //Use last element
+
+    if (index >= headersBlack.length) {
+      //Use last element
       headerBeginning = headersBlack[headersBlack.length - 1];
     } else {
       headerBeginning = headersBlack[index];
     }
-    
+
     if (index >= headersBlue.length) {
       headerEnd = headersBlue[headersBlue.length - 1];
     } else {
       headerEnd = headersBlue[index];
     }
-    
+
     if (index >= rotatingParagraphs.length) {
       paragraph = rotatingParagraphs[rotatingParagraphs.length - 1];
     } else {
       paragraph = rotatingParagraphs[index];
     }
-    
+
     //Add headers
     var newDiv = document.createElement("div");
     newDiv.className = "item";
-    
+
     var newElement = document.createElement("h4");
     var textBeginning = document.createTextNode(headerBeginning);
     var blueElement = document.createElement("a");
     var textBlue = document.createTextNode(headerEnd);
-    
+
     newElement.appendChild(textBeginning);
     blueElement.appendChild(textBlue);
     blueElement.className = "highlighted-words"; //Used for dark theme
     newElement.appendChild(blueElement);
-    
+
     newDiv.appendChild(newElement);
     wordsDiv.appendChild(newDiv);
-    
+
     //Add paragraphs
     var newPDiv = document.createElement("div");
     newPDiv.className = "item";
-      
+
     var newPElement = document.createElement("p");
     var textParagraph = document.createTextNode("");
     newPElement.innerHTML = paragraph; //So you can use html tags inside of paragraph.
-      
+
     newPElement.appendChild(textParagraph);
     if (connectParagraphToHeaders) {
-      newDiv.appendChild(newPElement);  
+      newDiv.appendChild(newPElement);
     } else {
       newPDiv.appendChild(newPElement);
       paragraphsDiv.appendChild(newPDiv);
@@ -125,21 +131,21 @@ var addRotatingWords = function() {
 
 var startTinySlider = function () {
   var sliders = document.querySelectorAll(".slider");
-  sliders.forEach(slider => {
+  sliders.forEach((slider) => {
     var tnsSlider = tns({
       container: slider,
-      mode: 'gallery', //carousel is also nice
+      mode: "gallery", //carousel is also nice
       controls: false,
       nav: false,
       autoplay: true,
       autoplayButtonOutput: false,
-      mouseDrag: true
+      mouseDrag: true,
     });
   });
   /*tns({
     
   });*/
-}
+};
 
 //On start
 if (loadDynamically) {
