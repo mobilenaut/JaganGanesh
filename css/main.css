@@ -7,13 +7,17 @@ body {
   height: 95vh;
 }
 
-div a, div a:hover, span {
-  color: #339FF0;
+div a,
+div a:hover,
+span {
+  color: #339ff0;
   text-decoration: none;
 }
 
 /* Font Awesome */
-.fab, .far, .fas {
+.fab,
+.far,
+.fas {
   padding: 5px;
   font-size: 20px;
   text-align: center;
