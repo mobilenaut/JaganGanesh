@@ -4,7 +4,7 @@
   You can also bypass the dynamic elements entirely
   and uncomment the elements in index.html
 */
-var loadDynamically = false;
+var loadDynamically = true;
 
 /* The beginning of the header sentence has a black font.
   The headersBlack element of index i, will be added to
@@ -27,6 +27,10 @@ var headersBlack = [
 var headersBlue = [
   //Descriptive and re-affirming words here
   "Jagan Ganesh.",
+  "a Freelance Consultant.",
+  "a JavaScript Enthusiast.",
+  "a Software Engineer.",
+  "a Content Creator.",
 ];
 
 /* If true, the paragraph beneath the header will also
@@ -47,7 +51,7 @@ var connectParagraphToHeaders = false;
   also use tags such as <a>, <span>, and a few more here.
 */
 var rotatingParagraphs = [
-  "As a Software Engineer with nine years of experience, I specialize in creating impactful Hybrid Mobile Applications using React Native. I collaborate with businesses to create scalable, user-friendly digital solutions that drive engagement and conversions.",
+  "I'm a Lead Software Engineer with 9+ years of experience turning ideas into powerful, high-performance Web and Mobile Applications. I specialize in crafting scalable, user-friendly solutions that captivate users and deliver real results for businesses.",
 ];
 
 var addRotatingWords = function () {
