@@ -51,7 +51,7 @@ var connectParagraphToHeaders = false;
   also use tags such as <a>, <span>, and a few more here.
 */
 var rotatingParagraphs = [
-  "I'm a Lead Software Engineer with 9+ years of experience turning ideas into powerful, high-performance Web and Mobile Applications. I specialize in crafting scalable, user-friendly solutions that captivate users and deliver real results for businesses.",
+  "As a Lead Software Engineer with over 9 years of experience, I transform ideas into powerful, high-performance web and mobile applications. My specialization lies in creating scalable, user-friendly solutions that engage users and deliver tangible results for businesses.",
 ];
 
 var addRotatingWords = function () {
